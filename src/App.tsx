@@ -361,10 +361,15 @@ const SOCIAL_LINKS = [
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-bg/80 backdrop-blur-md border-b border-brand-border">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between items-center h-16">
+      <div className="flex justify-between items-center h-32">
         <div className="flex items-center">
-          <span className="font-bold tracking-tighter text-lg">STORM</span>
-          <span className="font-medium tracking-tight text-xs ml-1.5 opacity-60 uppercase">Trading Group</span>
+          <img 
+            src="/logo.png" 
+            alt="Storm Trading Group Logo" 
+            className="h-24 w-auto" 
+            style={{ imageRendering: 'auto' }}
+            referrerPolicy="no-referrer" 
+          />
         </div>
         <div className="hidden md:flex items-center space-x-8 text-sm font-medium uppercase tracking-widest text-white/70">
           <a href="#about" className="hover:text-brand-primary transition-colors">Experience</a>
@@ -386,7 +391,12 @@ const Navbar = () => (
 );
 
 const Hero = () => (
-  <section className="relative pt-32 pb-20 overflow-hidden trading-grid min-h-screen flex items-center">
+  <section className="relative pt-48 pb-20 overflow-hidden trading-grid min-h-screen flex items-center">
+    {/* Subtle Logo Watermark */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-[0.03] pointer-events-none select-none z-0">
+      <img src="/image.jpeg" alt="" className="w-full h-full object-contain" referrerPolicy="no-referrer" loading="lazy" />
+    </div>
+    
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div 
@@ -887,10 +897,10 @@ const CertificateGallery = ({ items, interval = 3000 }: { items: typeof CERTIFIC
 
 const WebinarSection = () => {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-brand-bg relative overflow-hidden">
       <div className="absolute inset-0 bg-brand-primary/5 blur-[120px] rounded-full -translate-y-1/2"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="glass-card overflow-hidden rounded-3xl border border-brand-primary/20">
+        <div className="glass-card overflow-hidden rounded-3xl border border-brand-primary/20 bg-brand-card/40">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="relative h-[300px] lg:h-auto">
               <img 
@@ -899,7 +909,7 @@ const WebinarSection = () => {
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/20 to-transparent"></div>
               <div className="absolute top-6 left-6">
                 <div className="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse flex items-center gap-2 uppercase tracking-widest">
                   <span className="w-2 h-2 rounded-full bg-white"></span>
@@ -1625,12 +1635,17 @@ const Contact = () => (
 );
 
 const Footer = () => (
-  <footer className="py-12 border-t border-brand-border bg-black">
+  <footer className="py-12 border-t border-brand-border bg-brand-bg">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex items-center">
-          <span className="font-bold tracking-tighter text-lg">STORM</span>
-          <span className="font-medium tracking-tight text-xs ml-1.5 opacity-60 uppercase">Trading Group</span>
+          <img 
+            src="/logo.png" 
+            alt="Storm Trading Group Logo" 
+            className="h-28 w-auto" 
+            style={{ imageRendering: 'auto' }}
+            referrerPolicy="no-referrer" 
+          />
         </div>
         <div className="text-white/40 text-sm text-center md:text-right">
           <p>© 2026 Storm Trading Group. All rights reserved.</p>

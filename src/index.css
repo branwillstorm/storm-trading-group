@@ -5,11 +5,11 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-brand-primary: #6366f1; /* Indigo/Blue */
-  --color-brand-secondary: #a855f7; /* Purple */
-  --color-brand-bg: #050505;
-  --color-brand-card: #0f172a; /* Dark Blue Slate */
-  --color-brand-border: #1e293b;
+  --color-brand-primary: #00f29d; /* Bright Mint/Green from logo */
+  --color-brand-secondary: #00a884; /* Teal from logo */
+  --color-brand-bg: #0a1114; /* Darker charcoal/teal for background */
+  --color-brand-card: #1a262b; /* Matching logo background */
+  --color-brand-border: #2d3b41;
 }
 
 @layer base {
@@ -23,11 +23,11 @@
 }
 
 .neon-glow {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 20px rgba(0, 242, 157, 0.15);
 }
 
 .trading-grid {
-  background-image: radial-gradient(circle at 1px 1px, #1e293b 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, #2d3b41 1px, transparent 0);
   background-size: 40px 40px;
 }
 
@@ -123,7 +123,7 @@
 .react-tel-input .flag-dropdown {
   background-color: transparent !important;
   border: none !important;
-  border-bottom: 2px solid rgba(99, 102, 241, 0.3) !important;
+  border-bottom: 2px solid rgba(0, 242, 157, 0.3) !important;
   border-radius: 0 !important;
 }
 
@@ -133,27 +133,27 @@
 }
 
 .react-tel-input .country-list {
-  background-color: #0f172a !important;
+  background-color: #1a262b !important;
   color: white !important;
-  border: 1px solid #1e293b !important;
+  border: 1px solid #2d3b41 !important;
   border-radius: 8px !important;
   margin-top: 8px !important;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
 }
 
 .react-tel-input .country-list .country:hover {
-  background-color: #1e293b !important;
+  background-color: #2d3b41 !important;
 }
 
 .react-tel-input .country-list .country.highlight {
-  background-color: #6366f1 !important;
-  color: white !important;
+  background-color: #00f29d !important;
+  color: #0a1114 !important;
 }
 
 .react-tel-input .country-list .search {
-  background-color: #050505 !important;
+  background-color: #0a1114 !important;
   color: white !important;
-  border: 1px solid #1e293b !important;
+  border: 1px solid #2d3b41 !important;
   margin: 8px !important;
   padding: 8px !important;
   border-radius: 4px !important;
@@ -166,9 +166,9 @@
 }
 
 .react-tel-input .selected-flag .arrow {
-  border-top-color: #6366f1 !important;
+  border-top-color: #00f29d !important;
 }
 
 .react-tel-input .selected-flag .arrow.up {
-  border-bottom-color: #6366f1 !important;
+  border-bottom-color: #00f29d !important;
 }
