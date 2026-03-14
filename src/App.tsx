@@ -295,9 +295,9 @@ const CERTIFICATES = [
   { id: 4, firm: 'FunderPro', imageUrl: '/congratulationsCert.053bd46ae9e05478ba6d.png', color: 'from-[#250A0A] to-[#4D1B1B]', accent: '#FF4444' },
   { id: 5, firm: 'Alpha Capital', imageUrl: '/passed-verification.jpeg', color: 'from-[#000000] to-[#1C1C1C]', accent: '#C0C0C0' },
   { id: 6, firm: 'FXIFY', imageUrl: '/1.webp', color: 'from-[#0A1525] to-[#1A2B4B]', accent: '#3B82F6' },
-  { id: 7, firm: 'The 5ers', imageUrl: '/1 (1).webp', color: 'from-[#0A0510] to-[#1A0A25]', accent: '#FACC15' },
+  { id: 7, firm: 'The 5ers', imageUrl: '/1_1.webp', color: 'from-[#0A0510] to-[#1A0A25]', accent: '#FACC15' },
   { id: 8, firm: 'TopTier Trader', imageUrl: '/1689668538823.jpg', color: 'from-[#0A1525] to-[#1A2B4B]', accent: '#D4AF37' },
-  { id: 9, firm: 'TopTier Trader', imageUrl: '/1689668538823 (1).jpg', color: 'from-[#0A2463] to-[#1E3A8A]', accent: '#3B82F6' },
+  { id: 9, firm: 'TopTier Trader', imageUrl: '/1689668538823_1.jpg', color: 'from-[#0A2463] to-[#1E3A8A]', accent: '#3B82F6' },
   { id: 10, firm: 'Prop Firm', imageUrl: '/1704149608485.jpg', color: 'from-[#0A1525] to-[#1A2B4B]', accent: '#3B82F6' },
   { id: 11, firm: 'Prop Firm', imageUrl: '/1745769892931.jpg', color: 'from-[#0A1525] to-[#1A2B4B]', accent: '#3B82F6' },
   { id: 12, firm: 'Prop Firm', imageUrl: '/1qWOKufHbUIyfSIAY2zFHnEiU.avif', color: 'from-[#0A1525] to-[#1A2B4B]', accent: '#3B82F6' },
@@ -335,7 +335,6 @@ const PROP_FIRMS = [
   { name: 'FTMO', url: 'https://www.ftmo.com', logo: 'https://ftmo.com/wp-content/uploads/2021/04/FTMO_logo_blue.png', brandColor: '#00AEEF' },
   { name: 'FunderPro', url: 'https://funderpro.com', logo: 'https://funderpro.com/wp-content/themes/funderpro/assets/images/logo.svg', brandColor: '#FF4444' },
   { name: 'Alpha Capital', url: 'https://www.alphacapitalgroup.uk', logo: 'https://alphacapitalgroup.uk/wp-content/uploads/2023/10/Alpha-Capital-Group-Logo-Gold.png', brandColor: '#D4AF37' },
-  { name: 'FundedNext', url: 'https://www.fundednext.com', logo: 'https://fundednext.com/wp-content/uploads/2022/03/FundedNext-Logo.png', brandColor: '#00FFC2' },
   { name: 'Funding Pips', url: 'https://fundingpips.com', logo: 'https://fundingpips.com/wp-content/uploads/2023/01/Funding-Pips-Logo.png', brandColor: '#3B82F6' },
 ];
 
@@ -343,6 +342,7 @@ const BROKERS = [
   { name: 'SpaceMarkets', url: 'https://spacemarkets.io', logo: 'https://spacemarkets.io/wp-content/uploads/2023/05/logo-white.png' },
   { name: 'Trive', url: 'https://trive.com', logo: 'https://cdn.trive.com/assets/images/logo/trive-logo-white.svg' },
   { name: 'RCG Markets', url: 'https://rcgmarkets.com', logo: 'https://rcgmarkets.com/wp-content/uploads/2021/08/RCG-Markets-Logo-White.png' },
+  { name: 'Exness', url: 'https://www.exness.co.za/', logo: 'https://www.exness.com/media/images/logo/exness-logo.svg' },
 ];
 
 const SOCIAL_LINKS = [
@@ -362,7 +362,7 @@ const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-bg/80 backdrop-blur-md border-b border-brand-border">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center h-32">
-        <div className="flex items-center">
+        <a href="#hero" className="flex items-center">
           <img 
             src="/logo.png" 
             alt="Storm Trading Group Logo" 
@@ -370,8 +370,8 @@ const Navbar = () => (
             style={{ imageRendering: 'auto' }}
             referrerPolicy="no-referrer" 
           />
-        </div>
-        <div className="hidden md:flex items-center space-x-8 text-sm font-medium uppercase tracking-widest text-white/70">
+        </a>
+        <div className="hidden md:flex items-center space-x-8 text-xs font-medium uppercase tracking-widest text-brand-ink/60">
           <a href="#about" className="hover:text-brand-primary transition-colors">Experience</a>
           <a href="#methodology" className="hover:text-brand-primary transition-colors">Methodology</a>
           <a href="#products" className="hover:text-brand-primary transition-colors">Products</a>
@@ -381,7 +381,7 @@ const Navbar = () => (
         </div>
         <a 
           href="#apply" 
-          className="gradient-bg text-white px-3 py-1.5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:opacity-90 transition-all"
+          className="gradient-bg text-white px-6 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest hover:opacity-90 transition-all shadow-sm"
         >
           JOIN NOW
         </a>
@@ -391,10 +391,10 @@ const Navbar = () => (
 );
 
 const Hero = () => (
-  <section className="relative pt-48 pb-20 overflow-hidden trading-grid min-h-screen flex items-center">
+  <section id="hero" className="relative pt-48 pb-20 overflow-hidden trading-grid min-h-screen flex items-center">
     {/* Subtle Logo Watermark */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-[0.03] pointer-events-none select-none z-0">
-      <img src="/image.jpeg" alt="" className="w-full h-full object-contain" referrerPolicy="no-referrer" loading="lazy" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-[0.02] pointer-events-none select-none z-0">
+      <img src="/image.jpeg" alt="" className="w-full h-full object-contain grayscale" referrerPolicy="no-referrer" loading="lazy" />
     </div>
     
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -404,29 +404,29 @@ const Hero = () => (
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-mono mb-6">
-            <span className="relative flex h-2 w-2">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 border border-brand-primary/10 text-brand-primary text-[9px] font-medium mb-8 uppercase tracking-[0.3em]">
+            <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brand-primary"></span>
             </span>
             5+ YEARS MARKET EXPERIENCE
           </div>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-4">
-            LEARN HOW TO <br />
-            <span className="gradient-text uppercase">TRADE</span> <br />
-            <span className="text-2xl md:text-4xl uppercase tracking-[0.2em] text-white/80">
-              With <span className="gradient-text">Branwill Storm</span>
-            </span>
-            <div className="text-xl md:text-2xl uppercase tracking-[0.3em] text-white/40 mt-4">
-              Understand the Markets
+          <h1 className="text-5xl md:text-7xl font-serif font-normal leading-tight mb-8 text-brand-ink">
+            Learn how to <br />
+            <span className="gradient-text italic text-6xl md:text-8xl block my-2">Trade</span>
+            <div className="flex items-center gap-6 mt-10">
+              <div className="h-[1px] w-12 bg-brand-primary/20"></div>
+              <span className="text-[10px] md:text-xs font-sans font-medium uppercase tracking-[0.5em] text-brand-ink/40">
+                With Branwill Storm
+              </span>
             </div>
           </h1>
-          <div className="mb-8 max-w-lg">
-            <h2 className="text-xl md:text-2xl font-bold text-brand-primary mb-2">Shorten your learning curve</h2>
-            <p className="text-lg text-white/60 leading-relaxed mb-4">
+          <div className="mb-10 max-w-lg">
+            <h2 className="text-lg md:text-xl font-medium text-brand-primary mb-3 tracking-wide">Shorten your learning curve</h2>
+            <p className="text-lg text-brand-ink/60 leading-relaxed mb-4 font-light">
               Learn from a day trader and swing trader who has studied with the best in the industry.
             </p>
-            <p className="text-white/60 leading-relaxed">
+            <p className="text-brand-ink/50 leading-relaxed text-sm font-light">
               Professional multi-asset trading strategies for Crypto, Forex, Commodities, and Stocks. 
               From mentorship to capital raising, we build elite traders.
             </p>
@@ -434,7 +434,7 @@ const Hero = () => (
           <div className="flex flex-wrap gap-4">
             <a 
               href="#products" 
-              className="gradient-bg text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all group"
+              className="gradient-bg text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all group shadow-lg shadow-brand-primary/20"
             >
               Get Started <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -442,7 +442,7 @@ const Hero = () => (
               href="https://calendly.com/branwillstorm/45min" 
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all"
+              className="border border-brand-border px-8 py-4 rounded-full font-bold hover:bg-brand-card transition-all text-brand-ink"
             >
               Book 1-on-1 Call
             </a>
@@ -459,11 +459,11 @@ const Hero = () => (
               href="https://stormtrading.pages.dev" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="block relative overflow-hidden rounded-2xl border border-brand-primary/30 bg-black/40 backdrop-blur-xl group-hover:border-brand-primary transition-all duration-500 shadow-2xl shadow-brand-primary/5"
+              className="block relative overflow-hidden rounded-2xl border border-brand-border bg-white group-hover:border-brand-primary transition-all duration-500 shadow-xl shadow-black/5"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/5 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex flex-col sm:flex-row items-center gap-6 p-6">
-                <div className="relative w-full sm:w-48 h-32 rounded-xl overflow-hidden flex-shrink-0 border border-white/10">
+                <div className="relative w-full sm:w-48 h-32 rounded-xl overflow-hidden flex-shrink-0 border border-brand-border">
                   <img 
                     src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800" 
                     alt="Live Training Session" 
@@ -471,7 +471,7 @@ const Hero = () => (
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-black/5 flex items-center justify-center">
-                    <div className="bg-brand-primary/90 text-white p-3 rounded-full animate-pulse shadow-[0_0_20px_rgba(99,102,241,0.6)]">
+                    <div className="bg-brand-primary/90 text-white p-3 rounded-full animate-pulse shadow-[0_0_20px_rgba(0,168,132,0.4)]">
                       <Tv size={24} />
                     </div>
                   </div>
@@ -484,9 +484,9 @@ const Hero = () => (
                     <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                     Join Training Live Now
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-brand-primary transition-colors">Master the Markets with Live Presentation</h3>
-                  <p className="text-white/50 text-[11px] mb-4 max-w-xs leading-relaxed">Watch our live class showing real-time charts and strategies. Learn how to trade with professional students.</p>
-                  <div className="inline-flex items-center gap-2 bg-brand-primary text-black px-6 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-widest group-hover:bg-white transition-all shadow-lg">
+                  <h3 className="text-xl font-bold text-brand-ink mb-2 group-hover:text-brand-primary transition-colors">Master the Markets with Live Presentation</h3>
+                  <p className="text-brand-ink/50 text-[11px] mb-4 max-w-xs leading-relaxed">Watch our live class showing real-time charts and strategies. Learn how to trade with professional students.</p>
+                  <div className="inline-flex items-center gap-2 bg-brand-primary text-white px-6 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-widest group-hover:bg-brand-ink transition-all shadow-md">
                     Enter Live Session <ArrowRight size={12} />
                   </div>
                 </div>
@@ -504,16 +504,16 @@ const Hero = () => (
           <div className="glass-card p-6 neon-glow relative z-10">
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center">
                   <TrendingUp className="text-brand-primary w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-white/40 font-mono uppercase">Live Performance</div>
-                  <div className="font-bold text-lg">+142.8% YTD</div>
+                  <div className="text-xs text-brand-ink/40 font-mono uppercase">Live Performance</div>
+                  <div className="font-bold text-lg text-brand-ink">+142.8% YTD</div>
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-xs text-white/40 font-mono uppercase">Status</div>
+                <div className="text-xs text-brand-ink/40 font-mono uppercase">Status</div>
                 <div className="text-brand-primary font-bold">ACTIVE</div>
               </div>
             </div>
@@ -524,28 +524,28 @@ const Hero = () => (
                   initial={{ height: 0 }}
                   animate={{ height: `${h}%` }}
                   transition={{ delay: 1 + (i * 0.05), duration: 0.5 }}
-                  className="flex-1 bg-brand-primary/40 rounded-t-sm hover:bg-brand-primary transition-colors cursor-pointer"
+                  className="flex-1 bg-brand-primary/20 rounded-t-sm hover:bg-brand-primary transition-colors cursor-pointer"
                 />
               ))}
             </div>
             <div className="grid grid-cols-3 gap-4 border-t border-brand-border pt-6">
               <div>
-                <div className="text-[10px] text-white/40 uppercase font-mono mb-1">Win Rate</div>
-                <div className="font-bold">68.4%</div>
+                <div className="text-[10px] text-brand-ink/40 uppercase font-mono mb-1">Win Rate</div>
+                <div className="font-bold text-brand-ink">68.4%</div>
               </div>
               <div>
-                <div className="text-[10px] text-white/40 uppercase font-mono mb-1">Avg RR</div>
-                <div className="font-bold">1:3.2</div>
+                <div className="text-[10px] text-brand-ink/40 uppercase font-mono mb-1">Avg RR</div>
+                <div className="font-bold text-brand-ink">1:3.2</div>
               </div>
               <div>
-                <div className="text-[10px] text-white/40 uppercase font-mono mb-1">Drawdown</div>
-                <div className="font-bold text-red-500">2.4%</div>
+                <div className="text-[10px] text-brand-ink/40 uppercase font-mono mb-1">Drawdown</div>
+                <div className="font-bold text-red-600">2.4%</div>
               </div>
             </div>
           </div>
           {/* Decorative elements */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-primary/10 blur-3xl rounded-full"></div>
-          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-secondary/10 blur-3xl rounded-full"></div>
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-primary/5 blur-3xl rounded-full"></div>
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-secondary/5 blur-3xl rounded-full"></div>
         </motion.div>
       </div>
     </div>
@@ -557,8 +557,8 @@ const SectionHeading = ({ title, subtitle, badge }: { title: string, subtitle: s
     {badge && (
       <div className="text-brand-primary font-mono text-xs uppercase tracking-[0.3em] mb-4">{badge}</div>
     )}
-    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{title}</h2>
-    <p className="text-white/50 max-w-2xl text-lg">{subtitle}</p>
+    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-brand-ink">{title}</h2>
+    <p className="text-brand-ink/50 max-w-2xl text-lg">{subtitle}</p>
   </div>
 );
 
@@ -578,8 +578,8 @@ const About = () => (
                 <Globe className="text-brand-primary w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold mb-1 text-white">Multi-Asset Expertise</h4>
-                <p className="text-white/50 text-sm">Specializing in Crypto (Spot/Perps), Forex, Commodities, Indices, and Stocks.</p>
+                <h4 className="font-bold mb-1 text-brand-ink">Multi-Asset Expertise</h4>
+                <p className="text-brand-ink/50 text-sm">Specializing in Crypto (Spot/Perps), Forex, Commodities, Indices, and Stocks.</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -587,8 +587,8 @@ const About = () => (
                 <Target className="text-brand-primary w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold mb-1 text-white">Capital Management</h4>
-                <p className="text-white/50 text-sm">Managing private capital and helping students secure funding from top prop firms like TopTier Trader and Funded Next.</p>
+                <h4 className="font-bold mb-1 text-brand-ink">Capital Management</h4>
+                <p className="text-brand-ink/50 text-sm">Managing private capital and helping students secure funding from top prop firms like TopTier Trader and FTMO.</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -596,8 +596,8 @@ const About = () => (
                 <Cpu className="text-brand-primary w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold mb-1 text-white">Hybrid Trading System</h4>
-                <p className="text-white/50 text-sm">90% rules-based execution with 10% discretionary intuition built from 5+ years of market experience.</p>
+                <h4 className="font-bold mb-1 text-brand-ink">Hybrid Trading System</h4>
+                <p className="text-brand-ink/50 text-sm">90% rules-based execution with 10% discretionary intuition built from 5+ years of market experience.</p>
               </div>
             </div>
           </div>
@@ -605,19 +605,19 @@ const About = () => (
         <div className="grid grid-cols-2 gap-4">
           <div className="glass-card p-8 flex flex-col items-center justify-center text-center">
             <div className="text-4xl font-bold text-brand-primary mb-2">2019</div>
-            <div className="text-xs text-white/40 uppercase font-mono">Started Trading</div>
+            <div className="text-xs text-brand-ink/40 uppercase font-mono">Started Trading</div>
           </div>
           <div className="glass-card p-8 flex flex-col items-center justify-center text-center mt-8">
             <div className="text-4xl font-bold text-brand-primary mb-2">500+</div>
-            <div className="text-xs text-white/40 uppercase font-mono">Students Taught</div>
+            <div className="text-xs text-brand-ink/40 uppercase font-mono">Students Taught</div>
           </div>
           <div className="glass-card p-8 flex flex-col items-center justify-center text-center">
             <div className="text-4xl font-bold text-brand-primary mb-2">$10M+</div>
-            <div className="text-xs text-white/40 uppercase font-mono">Student Funding</div>
+            <div className="text-xs text-brand-ink/40 uppercase font-mono">Student Funding</div>
           </div>
           <div className="glass-card p-8 flex flex-col items-center justify-center text-center mt-8">
             <div className="text-4xl font-bold text-brand-primary mb-2">90/10</div>
-            <div className="text-xs text-white/40 uppercase font-mono">Rule/Discretionary</div>
+            <div className="text-xs text-brand-ink/40 uppercase font-mono">Rule/Discretionary</div>
           </div>
         </div>
       </div>
@@ -655,8 +655,8 @@ const Methodology = () => (
             <div className="w-12 h-12 rounded-lg bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform">
               {item.icon}
             </div>
-            <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-            <p className="text-white/50 leading-relaxed">{item.desc}</p>
+            <h3 className="text-xl font-bold mb-4 text-brand-ink">{item.title}</h3>
+            <p className="text-brand-ink/50 leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -680,25 +680,25 @@ const Products = () => (
                 <div className="w-12 h-12 rounded-lg bg-brand-primary/10 flex items-center justify-center text-brand-primary">
                   {product.icon}
                 </div>
-                <h3 className="text-2xl font-bold">{product.name}</h3>
+                <h3 className="text-2xl font-bold text-brand-ink">{product.name}</h3>
               </div>
-              <p className="text-white/50 mb-8">{product.description}</p>
+              <p className="text-brand-ink/50 mb-8">{product.description}</p>
               <div className="space-y-3">
                 {product.features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-3 text-sm">
+                  <div key={i} className="flex items-center gap-3 text-sm text-brand-ink/70">
                     <CheckCircle2 className="w-4 h-4 text-brand-primary" />
                     <span>{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="p-8 bg-black/20 flex-grow flex flex-col justify-between">
+            <div className="p-8 bg-brand-bg/20 flex-grow flex flex-col justify-between">
               <div className="mb-8">
                 {product.pricing.map((p, i) => (
                   <div key={i} className="text-center">
                     <div className="text-[10px] text-brand-primary uppercase font-mono mb-2 tracking-widest">{p.tier}</div>
-                    <div className="text-2xl font-bold text-white mb-1">{p.price}</div>
-                    <div className="text-xs text-white/40 font-mono italic">{p.period}</div>
+                    <div className="text-2xl font-bold text-brand-ink mb-1">{p.price}</div>
+                    <div className="text-xs text-brand-ink/40 font-mono italic">{p.period}</div>
                   </div>
                 ))}
               </div>
@@ -706,7 +706,7 @@ const Products = () => (
                 href={product.link} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 rounded-full gradient-bg text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all"
+                className="w-full py-4 rounded-full gradient-bg text-white font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-md"
               >
                 {product.buttonText || 'Get Started'} <ExternalLink className="w-4 h-4" />
               </a>
@@ -786,8 +786,8 @@ const CertificateGallery = ({ items, interval = 3000 }: { items: typeof CERTIFIC
                       setActiveIndex(i);
                     }
                   }}
-                  className={`absolute cursor-pointer glass-card p-1 overflow-hidden border-2 transition-colors bg-zinc-900 group/cert touch-manipulation ${
-                    isActive ? 'border-brand-primary shadow-[0_0_50px_rgba(99,102,241,0.5)]' : 'border-brand-primary/10'
+                  className={`absolute cursor-pointer glass-card p-1 overflow-hidden border-2 transition-colors bg-white group/cert touch-manipulation ${
+                    isActive ? 'border-brand-primary shadow-[0_0_50px_rgba(0,168,132,0.3)]' : 'border-brand-primary/10'
                   }`}
                   style={{
                     width: isMobile ? '240px' : '400px',
@@ -831,7 +831,7 @@ const CertificateGallery = ({ items, interval = 3000 }: { items: typeof CERTIFIC
 
                     {/* Status Badge */}
                     <div className={`absolute top-3 right-3 md:top-4 md:right-4 p-2 md:p-2.5 rounded-full border shadow-2xl transition-all duration-500 ${
-                      isActive ? 'bg-brand-primary border-white text-white scale-110' : 'bg-black/40 border-white/10 text-white/40'
+                      isActive ? 'bg-brand-primary border-white text-white scale-110' : 'bg-brand-border/40 border-brand-border text-brand-ink/40'
                     }`}>
                       <Zap size={14} className={isActive ? 'animate-pulse' : ''} />
                     </div>
@@ -843,7 +843,7 @@ const CertificateGallery = ({ items, interval = 3000 }: { items: typeof CERTIFIC
         </div>
         
         {/* Interaction Hint */}
-        <div className="mt-4 md:mt-6 text-[9px] text-white/20 font-mono uppercase tracking-[0.4em] animate-pulse">
+        <div className="mt-4 md:mt-6 text-[9px] text-brand-ink/20 font-mono uppercase tracking-[0.4em] animate-pulse">
           {isMobile ? 'Tap to switch or view' : 'Click to inspect achievement'}
         </div>
       </div>
@@ -919,11 +919,11 @@ const WebinarSection = () => {
             </div>
             <div className="p-8 lg:p-16 flex flex-col justify-center">
               <div className="text-brand-primary font-mono text-xs uppercase tracking-[0.4em] mb-4">Exclusive Webinar</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-brand-ink mb-6 leading-tight">
                 Fast Track Your Trading: <br />
-                <span className="gradient-text">Learn. Understand. Execute.</span>
+                <span className="gradient-text italic">Learn. Understand. Execute.</span>
               </h2>
-              <p className="text-white/60 text-lg mb-8 max-w-md leading-relaxed">
+              <p className="text-brand-ink/60 text-lg mb-8 max-w-md leading-relaxed">
                 Join our next live training session where we guide you through the exact process 
                 you need to follow to execute from the start—without signal groups or 
                 over-complicated information. Without overwhelming you, just a clear path to consistency.
@@ -933,19 +933,19 @@ const WebinarSection = () => {
                   href="https://stormtrading.pages.dev" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="gradient-bg text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all group"
+                  className="gradient-bg text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all group shadow-lg shadow-brand-primary/20"
                 >
                   Join Live Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
-              <div className="mt-8 flex items-center gap-4 text-white/40 text-sm">
+              <div className="mt-8 flex items-center gap-4 text-brand-ink/40 text-sm">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <img 
                       key={i}
                       src={`https://i.pravatar.cc/100?u=${i}`}
                       alt="User"
-                      className="w-8 h-8 rounded-full border-2 border-black"
+                      className="w-8 h-8 rounded-full border-2 border-brand-bg"
                     />
                   ))}
                 </div>
@@ -986,7 +986,7 @@ const Results = () => {
         <div className="absolute inset-y-0 left-4 z-20 flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
           <button 
             onClick={() => scroll(testimonialRef, 'left')}
-            className="w-12 h-12 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:bg-brand-primary hover:text-black transition-all"
+            className="w-12 h-12 rounded-full bg-white/80 backdrop-blur-md border border-brand-border flex items-center justify-center text-brand-ink hover:bg-brand-primary hover:text-white transition-all shadow-lg"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
@@ -994,7 +994,7 @@ const Results = () => {
         <div className="absolute inset-y-0 right-4 z-20 flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
           <button 
             onClick={() => scroll(testimonialRef, 'right')}
-            className="w-12 h-12 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:bg-brand-primary hover:text-black transition-all"
+            className="w-12 h-12 rounded-full bg-white/80 backdrop-blur-md border border-brand-border flex items-center justify-center text-brand-ink hover:bg-brand-primary hover:text-white transition-all shadow-lg"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -1008,17 +1008,17 @@ const Results = () => {
           <div className="flex animate-marquee-reverse-slow whitespace-nowrap">
             {[...TESTIMONIALS, ...TESTIMONIALS].map((t, idx) => (
               <div key={`${t.id}-${idx}`} className="inline-block w-[420px] h-[420px] mx-4 whitespace-normal touch-scroll-item">
-                <div className="glass-card p-8 h-full flex flex-col border-brand-primary/20 hover:border-brand-primary transition-all duration-500 rounded-[4rem]">
+                <div className="glass-card p-8 h-full flex flex-col border-brand-border hover:border-brand-primary transition-all duration-500 rounded-[4rem] bg-white shadow-xl">
                   <div className="flex items-center gap-3 mb-4">
                     <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full border-2 border-brand-primary/30" referrerPolicy="no-referrer" />
                     <div>
-                      <div className="font-bold text-white text-sm">{t.name}</div>
+                      <div className="font-bold text-brand-ink text-sm">{t.name}</div>
                       <div className="text-[9px] text-brand-primary font-mono uppercase tracking-widest">{t.role}</div>
                     </div>
                   </div>
-                  <p className="text-white/80 italic mb-4 flex-grow leading-relaxed text-xs overflow-y-auto no-scrollbar">"{t.content}"</p>
-                  <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
-                    <div className="text-[8px] text-white/40 uppercase font-mono tracking-widest">Result</div>
+                  <p className="text-brand-ink/70 italic mb-4 flex-grow leading-relaxed text-xs overflow-y-auto no-scrollbar">"{t.content}"</p>
+                  <div className="mt-auto pt-4 border-t border-brand-border flex items-center justify-between">
+                    <div className="text-[8px] text-brand-ink/40 uppercase font-mono tracking-widest">Result</div>
                     <div className="text-xs font-bold text-brand-primary uppercase tracking-tighter">{t.result}</div>
                   </div>
                 </div>
@@ -1042,7 +1042,7 @@ const Results = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-8 text-center uppercase tracking-widest text-white/60">Partnered Prop Firms</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center uppercase tracking-widest text-brand-ink/40">Partnered Prop Firms</h3>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {/* Standard Partners */}
             {PROP_FIRMS.map((firm) => (
@@ -1051,25 +1051,25 @@ const Results = () => {
                 href={firm.url} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="glass-card px-6 py-3 flex items-center justify-center group hover:border-brand-primary/60 transition-all hover:scale-105 min-w-[140px]"
+                className="glass-card px-6 py-3 flex items-center justify-center group hover:border-brand-primary/60 transition-all hover:scale-105 min-w-[140px] bg-white"
               >
                 <div className="h-8 flex items-center justify-center overflow-hidden">
                   {firm.logo ? (
                     <img 
                       src={firm.logo} 
                       alt={firm.name} 
-                      className="h-full w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity" 
+                      className="h-full w-auto object-contain opacity-40 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0" 
                       referrerPolicy="no-referrer"
                       onError={(e) => {
                         (e.target as HTMLImageElement).style.display = 'none';
                         const parent = (e.target as HTMLImageElement).parentElement;
                         if (parent) {
-                          parent.innerHTML = `<span class="font-bold text-[10px] uppercase tracking-widest text-center text-white/40">${firm.name}</span>`;
+                          parent.innerHTML = `<span class="font-bold text-[10px] uppercase tracking-widest text-center text-brand-ink/40">${firm.name}</span>`;
                         }
                       }}
                     />
                   ) : (
-                    <span className="font-bold text-[10px] uppercase tracking-widest text-center text-white/40 group-hover:text-brand-primary transition-colors">
+                    <span className="font-bold text-[10px] uppercase tracking-widest text-center text-brand-ink/40 group-hover:text-brand-primary transition-colors">
                       {firm.name}
                     </span>
                   )}
@@ -1080,7 +1080,7 @@ const Results = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-bold mb-8 text-center uppercase tracking-widest text-white/60">Partnered Brokers</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center uppercase tracking-widest text-brand-ink/40">Partnered Brokers</h3>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {BROKERS.map((broker) => (
               <a 
@@ -1088,17 +1088,17 @@ const Results = () => {
                 href={broker.url} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="glass-card px-6 py-3 flex items-center justify-center group hover:border-brand-secondary transition-all min-w-[140px]"
+                className="glass-card px-6 py-3 flex items-center justify-center group hover:border-brand-secondary transition-all min-w-[140px] bg-white"
               >
                 <div className="h-8 flex items-center justify-center overflow-hidden">
                   <img 
                     src={broker.logo} 
                     alt={broker.name} 
-                    className="h-full w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity" 
+                    className="h-full w-auto object-contain opacity-40 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0" 
                     referrerPolicy="no-referrer"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
-                      (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="text-white/40 font-bold text-[10px] uppercase tracking-widest">${broker.name}</span>`;
+                      (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="text-brand-ink/40 font-bold text-[10px] uppercase tracking-widest">${broker.name}</span>`;
                     }}
                   />
                 </div>
@@ -1233,12 +1233,20 @@ const ApplicationForm = () => {
   };
 
   return (
-    <section id="apply" className="py-16 bg-brand-bg relative overflow-hidden">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="glass-card p-6 md:p-10 min-h-[400px] flex flex-col justify-between relative overflow-hidden">
-          {/* Progress Bar */}
-          <div className="absolute top-0 left-0 h-1 bg-brand-primary transition-all duration-500" style={{ width: `${((step + 1) / questions.length) * 100}%` }}></div>
-          
+    <section id="apply" className="py-24 bg-brand-bg relative overflow-hidden">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="glass-card p-12 bg-white border-brand-border shadow-2xl rounded-[3rem]">
+          <div className="mb-12">
+            <div className="flex justify-between items-center mb-4">
+              <span className="text-xs font-mono text-brand-primary font-bold uppercase tracking-widest">Question {step + 1} of {questions.length}</span>
+              <div className="flex gap-1">
+                {questions.map((_, i) => (
+                  <div key={i} className={`h-1 w-8 rounded-full transition-all ${i <= step ? 'bg-brand-primary' : 'bg-brand-border'}`} />
+                ))}
+              </div>
+            </div>
+          </div>
+
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
@@ -1248,10 +1256,9 @@ const ApplicationForm = () => {
               transition={{ duration: 0.4 }}
               className="flex-grow flex flex-col justify-center"
             >
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-brand-primary font-mono text-lg">{step + 1} →</span>
-                <h3 className="text-xl md:text-2xl font-bold text-white">{questions[step].question}</h3>
-              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-ink mb-8 leading-tight">
+                {questions[step].question}
+              </h2>
 
               {questions[step].type === 'text' || questions[step].type === 'email' ? (
                 <input
@@ -1259,11 +1266,11 @@ const ApplicationForm = () => {
                   value={formData[questions[step].id as keyof typeof formData]}
                   onChange={(e) => updateField(questions[step].id, e.target.value)}
                   placeholder={questions[step].placeholder}
-                  className="w-full bg-transparent border-b-2 border-brand-primary/30 py-4 text-xl outline-none focus:border-brand-primary transition-colors text-white"
+                  className="w-full bg-transparent border-b-2 border-brand-primary/30 py-4 text-2xl outline-none focus:border-brand-primary transition-colors text-brand-ink font-medium"
                   onKeyDown={(e) => e.key === 'Enter' && handleNext()}
                 />
               ) : questions[step].type === 'choice' ? (
-                <div className="space-y-3">
+                <div className="grid grid-cols-1 gap-3">
                   {questions[step].options?.map((option, i) => (
                     <button
                       key={option}
@@ -1278,20 +1285,24 @@ const ApplicationForm = () => {
                         
                         if (!hasFollowUp) setTimeout(handleNext, 300);
                       }}
-                      className={`w-full text-left p-4 rounded-lg border-2 transition-all flex items-center justify-between group ${
+                      className={`text-left p-5 rounded-2xl border-2 transition-all flex items-center justify-between group ${
                         formData[questions[step].id as keyof typeof formData] === option
-                          ? 'border-brand-primary bg-brand-primary/10'
-                          : 'border-white/10 bg-white/5 hover:border-white/30'
+                          ? 'border-brand-primary bg-brand-primary/5 text-brand-primary'
+                          : 'border-brand-border hover:border-brand-primary/30 text-brand-ink'
                       }`}
                     >
                       <div className="flex items-center gap-4">
-                        <span className="w-6 h-6 rounded border border-white/20 flex items-center justify-center text-xs font-bold group-hover:border-brand-primary transition-colors">
+                        <span className={`w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all ${
+                          formData[questions[step].id as keyof typeof formData] === option
+                            ? 'border-brand-primary bg-brand-primary text-white'
+                            : 'border-brand-border group-hover:border-brand-primary/30'
+                        }`}>
                           {String.fromCharCode(65 + i)}
                         </span>
-                        <span className="text-base">{option}</span>
+                        <span className="text-lg font-bold">{option}</span>
                       </div>
                       {formData[questions[step].id as keyof typeof formData] === option && (
-                        <CheckCircle2 className="text-brand-primary w-5 h-5" />
+                        <CheckCircle2 className="text-brand-primary w-6 h-6" />
                       )}
                     </button>
                   ))}
@@ -1303,7 +1314,7 @@ const ApplicationForm = () => {
                         placeholder="Please specify your location..."
                         value={formData.otherLocation}
                         onChange={(e) => updateField('otherLocation', e.target.value)}
-                        className="w-full bg-transparent border-b-2 border-brand-primary/30 py-2 text-xl outline-none focus:border-brand-primary transition-colors text-white"
+                        className="w-full bg-transparent border-b-2 border-brand-primary/30 py-2 text-xl outline-none focus:border-brand-primary transition-colors text-brand-ink"
                         onKeyDown={(e) => e.key === 'Enter' && handleNext()}
                       />
                     </motion.div>
@@ -1311,13 +1322,13 @@ const ApplicationForm = () => {
 
                   {questions[step].id === 'tradedBefore' && formData.tradedBefore === 'Yes' && (
                     <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="mt-4">
-                      <p className="text-sm text-white/40 mb-2 uppercase font-mono">How long have you been trading/learning? When did you start?</p>
+                      <p className="text-sm text-brand-ink/40 mb-2 uppercase font-mono">How long have you been trading/learning? When did you start?</p>
                       <input
                         type="text"
                         placeholder="e.g. 2 years, started in 2024..."
                         value={formData.tradingDuration}
                         onChange={(e) => updateField('tradingDuration', e.target.value)}
-                        className="w-full bg-transparent border-b-2 border-brand-primary/30 py-2 text-xl outline-none focus:border-brand-primary transition-colors text-white"
+                        className="w-full bg-transparent border-b-2 border-brand-primary/30 py-2 text-xl outline-none focus:border-brand-primary transition-colors text-brand-ink"
                         onKeyDown={(e) => e.key === 'Enter' && handleNext()}
                       />
                     </motion.div>
@@ -1325,7 +1336,7 @@ const ApplicationForm = () => {
 
                   {questions[step].id === 'activelyTrading' && formData.activelyTrading === 'Yes' && (
                     <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="mt-4">
-                      <p className="text-sm text-white/40 mb-2 uppercase font-mono">Are you trading Live, Demo, or Prop Firm account?</p>
+                      <p className="text-sm text-brand-ink/40 mb-2 uppercase font-mono">Are you trading Live, Demo, or Prop Firm account?</p>
                       <div className="flex flex-wrap gap-2 mt-2">
                         {['Live', 'Demo', 'Prop Firm'].map((type) => (
                           <button
@@ -1333,8 +1344,8 @@ const ApplicationForm = () => {
                             onClick={() => updateField('accountType', type)}
                             className={`px-4 py-2 rounded-full border text-sm transition-all ${
                               formData.accountType === type 
-                                ? 'bg-brand-primary text-black border-brand-primary' 
-                                : 'bg-white/5 border-white/10 hover:border-white/30'
+                                ? 'bg-brand-primary text-white border-brand-primary' 
+                                : 'bg-brand-bg border-brand-border hover:border-brand-primary/30 text-brand-ink'
                             }`}
                           >
                             {type}
@@ -1346,13 +1357,13 @@ const ApplicationForm = () => {
 
                   {questions[step].id === 'previousMentorship' && formData.previousMentorship === 'Yes' && (
                     <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="mt-4">
-                      <p className="text-sm text-white/40 mb-2 uppercase font-mono">Whose course/mentorship did you join?</p>
+                      <p className="text-sm text-brand-ink/40 mb-2 uppercase font-mono">Whose course/mentorship did you join?</p>
                       <input
                         type="text"
                         placeholder="Mentor name..."
                         value={formData.mentorName}
                         onChange={(e) => updateField('mentorName', e.target.value)}
-                        className="w-full bg-transparent border-b-2 border-brand-primary/30 py-2 text-xl outline-none focus:border-brand-primary transition-colors text-white"
+                        className="w-full bg-transparent border-b-2 border-brand-primary/30 py-2 text-xl outline-none focus:border-brand-primary transition-colors text-brand-ink"
                         onKeyDown={(e) => e.key === 'Enter' && handleNext()}
                       />
                     </motion.div>
@@ -1366,10 +1377,10 @@ const ApplicationForm = () => {
                     onChange={(phone) => updateField('phoneNumber', phone)}
                     enableSearch={true}
                     containerClass="!w-full"
-                    inputClass="!w-full !bg-transparent !border-none !border-b-2 !border-brand-primary/30 !py-8 !text-xl !outline-none !focus:border-brand-primary !transition-colors !text-white !h-auto !pl-14"
-                    buttonClass="!bg-transparent !border-none !border-b-2 !border-brand-primary/30 !hover:bg-white/5"
-                    dropdownClass="!bg-brand-card !text-white !border-brand-border"
-                    searchClass="!bg-brand-bg !text-white !border-brand-border"
+                    inputClass="!w-full !bg-transparent !border-none !border-b-2 !border-brand-primary/30 !py-8 !text-2xl !outline-none !focus:border-brand-primary !transition-colors !text-brand-ink !h-auto !pl-14 !font-medium"
+                    buttonClass="!bg-transparent !border-none !border-b-2 !border-brand-primary/30 !hover:bg-brand-primary/5"
+                    dropdownClass="!bg-white !text-brand-ink !border-brand-border !rounded-2xl !shadow-2xl"
+                    searchClass="!bg-brand-bg !text-brand-ink !border-brand-border"
                   />
                 </div>
               ) : null}
@@ -1379,8 +1390,8 @@ const ApplicationForm = () => {
           <div className="mt-12 flex items-center justify-between">
             <div className="flex gap-2">
               {step > 0 && (
-                <button onClick={handleBack} className="p-3 rounded-lg border border-white/10 hover:bg-white/5 transition-all">
-                  <ArrowRight className="w-5 h-5 rotate-180" />
+                <button onClick={handleBack} className="p-4 rounded-2xl border border-brand-border hover:bg-brand-bg transition-all text-brand-ink">
+                  <ArrowRight className="w-6 h-6 rotate-180" />
                 </button>
               )}
             </div>
@@ -1388,21 +1399,21 @@ const ApplicationForm = () => {
             {!isLastStep ? (
               <button 
                 onClick={handleNext}
-                className="gradient-bg text-white px-6 py-2.5 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all text-sm"
+                className="gradient-bg text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all shadow-lg shadow-brand-primary/20"
               >
-                OK <ArrowRight className="w-4 h-4" />
+                CONTINUE <ArrowRight className="w-5 h-5" />
               </button>
             ) : (
               <button 
                 onClick={handleSubmit}
-                className="gradient-bg text-white px-10 py-4 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all shadow-lg shadow-brand-primary/20"
+                className="gradient-bg text-white px-10 py-5 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-all shadow-xl shadow-brand-primary/30"
               >
-                SUBMIT APPLICATION <CheckCircle2 className="w-5 h-5" />
+                SUBMIT APPLICATION <CheckCircle2 className="w-6 h-6" />
               </button>
             )}
           </div>
           
-          <div className="mt-6 text-[10px] text-white/20 font-mono uppercase tracking-widest text-center">
+          <div className="mt-8 text-[10px] text-brand-ink/30 font-mono uppercase tracking-widest text-center">
             Press Enter ↵ to continue
           </div>
         </div>
@@ -1433,7 +1444,7 @@ const Trustpilot = () => {
               </svg>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white">Trustpilot</h3>
+              <h3 className="text-2xl font-bold text-brand-ink">Trustpilot</h3>
               <div className="flex items-center gap-1">
                 {[1, 2, 3, 4, 5].map((s) => (
                   <div key={s} className="w-4 h-4 bg-[#00b67a] flex items-center justify-center rounded-sm">
@@ -1442,12 +1453,12 @@ const Trustpilot = () => {
                     </svg>
                   </div>
                 ))}
-                <span className="ml-2 text-white/60 text-sm font-medium">Excellent 4.9/5</span>
+                <span className="ml-2 text-brand-ink/60 text-sm font-medium">Excellent 4.9/5</span>
               </div>
             </div>
           </div>
           <div className="text-center md:text-right">
-            <p className="text-white/40 text-sm uppercase tracking-widest font-mono mb-2">Based on 150+ reviews</p>
+            <p className="text-brand-ink/40 text-sm uppercase tracking-widest font-mono mb-2">Based on 150+ reviews</p>
             <a href="https://trustpilot.com" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline font-bold">View all reviews</a>
           </div>
         </div>
@@ -1457,7 +1468,7 @@ const Trustpilot = () => {
         <div className="absolute inset-y-0 left-4 z-20 flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
           <button 
             onClick={() => scroll('left')}
-            className="w-10 h-10 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:bg-[#00b67a] transition-all"
+            className="w-10 h-10 rounded-full bg-white shadow-lg border border-brand-border flex items-center justify-center text-brand-ink hover:text-brand-primary transition-all"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -1465,7 +1476,7 @@ const Trustpilot = () => {
         <div className="absolute inset-y-0 right-4 z-20 flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
           <button 
             onClick={() => scroll('right')}
-            className="w-10 h-10 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:bg-[#00b67a] transition-all"
+            className="w-10 h-10 rounded-full bg-white shadow-lg border border-brand-border flex items-center justify-center text-brand-ink hover:text-brand-primary transition-all"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -1479,7 +1490,7 @@ const Trustpilot = () => {
           <div className="flex animate-marquee-reverse-slow whitespace-nowrap">
             {[...TRUSTPILOT_REVIEWS, ...TRUSTPILOT_REVIEWS].map((review, idx) => (
               <div key={`${review.id}-${idx}`} className="inline-block w-[450px] h-[450px] mx-6 whitespace-normal touch-scroll-item">
-                <div className="bg-white/5 p-10 rounded-[5rem] border border-white/10 hover:border-[#00b67a]/40 transition-all h-full flex flex-col shadow-2xl relative group/card">
+                <div className="bg-white p-10 rounded-[5rem] border border-brand-border hover:border-brand-primary/40 transition-all h-full flex flex-col shadow-sm relative group/card">
                   <div className="absolute top-0 right-0 p-8 opacity-5 group-hover/card:opacity-10 transition-opacity">
                     <svg width="80" height="80" viewBox="0 0 24 24" fill="#00b67a">
                       <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -1494,13 +1505,13 @@ const Trustpilot = () => {
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm text-white/90 mb-6 italic flex-grow leading-relaxed overflow-y-auto no-scrollbar">"{review.content}"</p>
-                  <div className="flex justify-between items-center mt-auto pt-6 border-t border-white/10">
+                  <p className="text-sm text-brand-ink/90 mb-6 italic flex-grow leading-relaxed overflow-y-auto no-scrollbar">"{review.content}"</p>
+                  <div className="flex justify-between items-center mt-auto pt-6 border-t border-brand-border">
                     <div className="flex flex-col">
-                      <span className="font-bold text-xs text-white">{review.name}</span>
+                      <span className="font-bold text-xs text-brand-ink">{review.name}</span>
                       <span className="text-[9px] text-[#00b67a] font-bold uppercase tracking-widest">Verified Customer</span>
                     </div>
-                    <span className="text-[9px] text-white/20 uppercase font-mono">{review.date}</span>
+                    <span className="text-[9px] text-brand-ink/20 uppercase font-mono">{review.date}</span>
                   </div>
                 </div>
               </div>
@@ -1517,8 +1528,8 @@ const Trustpilot = () => {
 };
 
 const Contact = () => (
-  <section id="contact" className="py-24 bg-brand-card/30">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="contact" className="py-24 bg-brand-bg relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
           <SectionHeading 
@@ -1532,8 +1543,8 @@ const Contact = () => (
                 <Mail className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-xs text-white/40 font-mono uppercase">Email</div>
-                <a href="mailto:stormbranwill@gmail.com" className="font-bold hover:text-brand-primary transition-colors">stormbranwill@gmail.com</a>
+                <div className="text-xs text-brand-ink/40 font-mono uppercase">Email</div>
+                <a href="mailto:stormbranwill@gmail.com" className="font-bold hover:text-brand-primary transition-colors text-brand-ink">stormbranwill@gmail.com</a>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -1541,8 +1552,8 @@ const Contact = () => (
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-xs text-white/40 font-mono uppercase">WhatsApp Business</div>
-                <a href="https://api.whatsapp.com/send?phone=27614471418" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-brand-primary transition-colors">+27 61 447 1418</a>
+                <div className="text-xs text-brand-ink/40 font-mono uppercase">WhatsApp Business</div>
+                <a href="https://api.whatsapp.com/send?phone=27614471418" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-brand-primary transition-colors text-brand-ink">+27 61 447 1418</a>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -1550,8 +1561,8 @@ const Contact = () => (
                 <Calendar className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-xs text-white/40 font-mono uppercase">Booking</div>
-                <a href="https://calendly.com/branwillstorm/45min" className="font-bold hover:text-brand-primary transition-colors">calendly.com/branwillstorm/45min</a>
+                <div className="text-xs text-brand-ink/40 font-mono uppercase">Booking</div>
+                <a href="https://calendly.com/branwillstorm/45min" className="font-bold hover:text-brand-primary transition-colors text-brand-ink">calendly.com/branwillstorm/45min</a>
               </div>
             </div>
           </div>
@@ -1563,7 +1574,7 @@ const Contact = () => (
                 href={social.url} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-12 h-12 glass-card flex items-center justify-center transition-all ${social.color}`}
+                className={`w-12 h-12 bg-white border border-brand-border rounded-2xl flex items-center justify-center transition-all hover:border-brand-primary hover:shadow-lg ${social.color}`}
                 title={social.name}
               >
                 {React.cloneElement(social.icon as React.ReactElement, { size: 20 })}
@@ -1572,8 +1583,8 @@ const Contact = () => (
           </div>
         </div>
         
-        <div className="glass-card p-8">
-          <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+        <div className="bg-white p-8 rounded-[2rem] border border-brand-border shadow-xl">
+          <h3 className="text-2xl font-bold mb-6 text-brand-ink">Send a Message</h3>
           <form 
             className="space-y-4" 
             onSubmit={(e) => {
@@ -1600,17 +1611,17 @@ const Contact = () => (
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label className="text-xs text-white/40 font-mono uppercase">Name</label>
-                <input name="name" type="text" required className="w-full bg-black/40 border border-brand-border rounded-lg p-3 focus:border-brand-primary outline-none transition-all" placeholder="John Doe" />
+                <label className="text-xs text-brand-ink/40 font-mono uppercase">Name</label>
+                <input name="name" type="text" required className="w-full bg-brand-bg/50 border border-brand-border rounded-xl p-3 focus:border-brand-primary outline-none transition-all text-brand-ink" placeholder="John Doe" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs text-white/40 font-mono uppercase">Email</label>
-                <input name="email" type="email" required className="w-full bg-black/40 border border-brand-border rounded-lg p-3 focus:border-brand-primary outline-none transition-all" placeholder="john@example.com" />
+                <label className="text-xs text-brand-ink/40 font-mono uppercase">Email</label>
+                <input name="email" type="email" required className="w-full bg-brand-bg/50 border border-brand-border rounded-xl p-3 focus:border-brand-primary outline-none transition-all text-brand-ink" placeholder="john@example.com" />
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-xs text-white/40 font-mono uppercase">Subject</label>
-              <select name="subject" className="w-full bg-black/40 border border-brand-border rounded-lg p-3 focus:border-brand-primary outline-none transition-all">
+              <label className="text-xs text-brand-ink/40 font-mono uppercase">Subject</label>
+              <select name="subject" className="w-full bg-brand-bg/50 border border-brand-border rounded-xl p-3 focus:border-brand-primary outline-none transition-all text-brand-ink">
                 <option>General Inquiry</option>
                 <option>Mentorship Program</option>
                 <option>Course Support</option>
@@ -1618,13 +1629,13 @@ const Contact = () => (
               </select>
             </div>
             <div className="space-y-2">
-              <label className="text-xs text-white/40 font-mono uppercase">Message</label>
-              <textarea name="message" required className="w-full bg-black/40 border border-brand-border rounded-lg p-3 focus:border-brand-primary outline-none transition-all h-32" placeholder="How can we help you?"></textarea>
+              <label className="text-xs text-brand-ink/40 font-mono uppercase">Message</label>
+              <textarea name="message" required className="w-full bg-brand-bg/50 border border-brand-border rounded-xl p-3 focus:border-brand-primary outline-none transition-all h-32 text-brand-ink" placeholder="How can we help you?"></textarea>
             </div>
-            <button type="submit" className="w-full py-4 rounded-full gradient-bg text-white font-bold uppercase tracking-widest hover:opacity-90 transition-all flex items-center justify-center gap-2">
+            <button type="submit" className="w-full py-4 rounded-full gradient-bg text-white font-bold uppercase tracking-widest hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-primary/20">
               Send Message <ArrowRight className="w-4 h-4" />
             </button>
-            <p className="text-[10px] text-white/30 text-center mt-4">
+            <p className="text-[10px] text-brand-ink/30 text-center mt-4">
               Clicking send will open both WhatsApp and your Email client to ensure we receive your message.
             </p>
           </form>
@@ -1635,7 +1646,7 @@ const Contact = () => (
 );
 
 const Footer = () => (
-  <footer className="py-12 border-t border-brand-border bg-brand-bg">
+  <footer className="py-12 border-t border-brand-border bg-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex items-center">
@@ -1647,7 +1658,7 @@ const Footer = () => (
             referrerPolicy="no-referrer" 
           />
         </div>
-        <div className="text-white/40 text-sm text-center md:text-right">
+        <div className="text-brand-ink/40 text-sm text-center md:text-right">
           <p>© 2026 Storm Trading Group. All rights reserved.</p>
           <p className="mt-1">Trading involves significant risk. Past performance is not indicative of future results.</p>
         </div>
@@ -1657,6 +1668,10 @@ const Footer = () => (
 );
 
 export default function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />

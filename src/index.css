@@ -1,33 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-brand-primary: #00f29d; /* Bright Mint/Green from logo */
-  --color-brand-secondary: #00a884; /* Teal from logo */
-  --color-brand-bg: #0a1114; /* Darker charcoal/teal for background */
-  --color-brand-card: #1a262b; /* Matching logo background */
-  --color-brand-border: #2d3b41;
+  --color-brand-primary: #00a884; /* Refined Teal */
+  --color-brand-secondary: #5A5A40; /* Olive/Warm accent */
+  --color-brand-bg: #FDFCF8; /* Warm Cream */
+  --color-brand-card: #FFFFFF; /* Pure White */
+  --color-brand-border: #E5E2D9; /* Soft Beige */
+  --color-brand-ink: #1A1A1A; /* Deep Charcoal */
 }
 
 @layer base {
   body {
-    @apply bg-brand-bg text-white font-sans antialiased;
+    @apply bg-brand-bg text-brand-ink font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
 }
 
 .glass-card {
-  @apply bg-brand-card/50 backdrop-blur-sm border border-brand-border rounded-xl overflow-hidden;
+  @apply bg-brand-card border border-brand-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow;
 }
 
 .neon-glow {
-  box-shadow: 0 0 20px rgba(0, 242, 157, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 168, 132, 0.05);
 }
 
 .trading-grid {
-  background-image: radial-gradient(circle at 1px 1px, #2d3b41 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, #E5E2D9 1px, transparent 0);
   background-size: 40px 40px;
 }
 
@@ -36,7 +42,7 @@
 }
 
 .gradient-bg {
-  @apply bg-gradient-to-r from-brand-primary to-brand-secondary;
+  @apply bg-brand-primary;
 }
 
 @keyframes marquee {
@@ -133,27 +139,27 @@
 }
 
 .react-tel-input .country-list {
-  background-color: #1a262b !important;
-  color: white !important;
-  border: 1px solid #2d3b41 !important;
+  background-color: #FFFFFF !important;
+  color: #1A1A1A !important;
+  border: 1px solid #E5E2D9 !important;
   border-radius: 8px !important;
   margin-top: 8px !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
 }
 
 .react-tel-input .country-list .country:hover {
-  background-color: #2d3b41 !important;
+  background-color: #FDFCF8 !important;
 }
 
 .react-tel-input .country-list .country.highlight {
-  background-color: #00f29d !important;
-  color: #0a1114 !important;
+  background-color: #00a884 !important;
+  color: #FFFFFF !important;
 }
 
 .react-tel-input .country-list .search {
-  background-color: #0a1114 !important;
-  color: white !important;
-  border: 1px solid #2d3b41 !important;
+  background-color: #FDFCF8 !important;
+  color: #1A1A1A !important;
+  border: 1px solid #E5E2D9 !important;
   margin: 8px !important;
   padding: 8px !important;
   border-radius: 4px !important;
@@ -161,14 +167,14 @@
 
 .react-tel-input .country-list .search-box {
   background-color: transparent !important;
-  color: white !important;
+  color: #1A1A1A !important;
   border: none !important;
 }
 
 .react-tel-input .selected-flag .arrow {
-  border-top-color: #00f29d !important;
+  border-top-color: #00a884 !important;
 }
 
 .react-tel-input .selected-flag .arrow.up {
-  border-bottom-color: #00f29d !important;
+  border-bottom-color: #00a884 !important;
 }
