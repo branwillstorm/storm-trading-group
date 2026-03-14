@@ -740,11 +740,27 @@ const CertificateGallery = ({ items, interval = 3000 }: { items: typeof CERTIFIC
     return () => clearInterval(timer);
   }, [items.length, interval]);
 
+  const handlePanEnd = (_: any, info: any) => {
+    const threshold = 50;
+    if (info.offset.x > threshold) {
+      // Swipe Right -> Previous
+      setActiveIndex((prev) => (prev - 1 + items.length) % items.length);
+    } else if (info.offset.x < -threshold) {
+      // Swipe Left -> Next
+      setActiveIndex((prev) => (prev + 1) % items.length);
+    }
+  };
+
   return (
     <>
-      <div className="relative w-full py-4 md:py-8 flex flex-col items-center overflow-hidden select-none">
+      <div 
+        className="relative w-full py-4 md:py-8 flex flex-col items-center overflow-hidden select-none touch-pan-y"
+      >
         {/* 3D Stage Container */}
-        <div className="relative w-full max-w-5xl h-[280px] md:h-[420px] flex items-center justify-center [perspective:2000px]">
+        <motion.div 
+          onPanEnd={handlePanEnd}
+          className="relative w-full max-w-5xl h-[280px] md:h-[420px] flex items-center justify-center [perspective:2000px]"
+        >
           <AnimatePresence mode="popLayout">
             {items.map((cert, i) => {
               // Calculate relative position to active index
@@ -840,11 +856,11 @@ const CertificateGallery = ({ items, interval = 3000 }: { items: typeof CERTIFIC
               );
             })}
           </AnimatePresence>
-        </div>
+        </motion.div>
         
         {/* Interaction Hint */}
-        <div className="mt-4 md:mt-6 text-[9px] text-brand-ink/20 font-mono uppercase tracking-[0.4em] animate-pulse">
-          {isMobile ? 'Tap to switch or view' : 'Click to inspect achievement'}
+        <div className="mt-4 md:mt-6 text-[10px] text-brand-primary font-bold font-mono uppercase tracking-[0.4em] animate-pulse">
+          Tap to switch or view
         </div>
       </div>
 
